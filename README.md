@@ -1,4 +1,4 @@
-# All-in-one-favicon-generator
+# All-in-one favicon generator
 Generates all necessary favicons for your website.
 This includes iOS Safari, Google Chrome, Mozilla Firefox, Windows 8 and 10, and possibly some other browsers.
 
