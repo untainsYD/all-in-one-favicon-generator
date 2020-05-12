@@ -1,19 +1,16 @@
 #!/bin/bash
-SCRIPT_FOLLOW=`realpath $0`
-SCRIPT=`realpath -s $0`
-SCRIPTPATH=`dirname $SCRIPT_FOLLOW`
-CALLPATH=`pwd`
-me=`basename "$0"`
 
 DIST="dist"
 if [ $# -eq 2 ]; then
     DIST=$2
 fi
 
+echo `pwd`/$1;
+
 if [ $# -gt 0 ]; then
-    make -C $SCRIPTPATH SOURCE="$(pwd)/$1" DIST="$CALLPATH/$DIST"
+    make -C "/usr/share/favicon-generator" SOURCE="`pwd`/$1" DIST="`pwd`/$DIST"
 else
     echo -e "Error: missing arguments\n"
     echo -e "USAGE:"
-    echo -e "\t$me <image> <output dir>"
+    echo -e "\t`basename "$0"` <image> <output_dir>"
 fi
