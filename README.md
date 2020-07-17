@@ -25,7 +25,7 @@ FILE ?= <image filename>
 ```
 
 # Using bash
-You use bash script `generate.sh` to use the program anywhere on your system. First of, you have to areat a symbolic link to an executable using the following command
+You use bash script `generate.sh` to use the program anywhere on your system. First of, you have to create a symbolic link to an executable using the following command
 ```bash
 $ ln -s <path to program>/generate.sh ~/.local/bin/webicongen
 # example: ln -s ~/Programs/Favicons_generation/generate.sh ~/.local/bin/webicongen
@@ -40,11 +40,11 @@ The output directory will be created automatically.
 After everything is configured, simply place your image in the same directory as makefile, and then simply run `make`. It will generate the following directory structure
 ```
 dist/
-├── public
+├── public/
 │   ├── apple-touch-icon.png
 │   ├── apple-touch-icon-precomposed.png
 │   ├── favicon.ico
-│   ├── icons
+│   ├── icons/
 │   │   ├── android-chrome-192x192.png
 │   │   ├── android-chrome-512x512.png
 │   │   ├── apple-touch-icon-114x114.png
