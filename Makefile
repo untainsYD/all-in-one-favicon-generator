@@ -14,7 +14,12 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-CC = magick convert
+ifeq ($(OS),Windows_NT)
+    CC = magick
+else
+    CC = convert
+endif
+
 SOURCE ?= source.png
 
 # Files & forlders
