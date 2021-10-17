@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-CC = convert
+CC = magick convert
 SOURCE ?= source.png
 
 # Files & forlders
@@ -105,46 +105,46 @@ all: $(SOURCE)
 	-mkdir $(DIST) $(dist_public) $(dist_icons)
 
 	@echo "Generating.. Regular icons"
-	@$(CC) $(SOURCE) -resize 16x16! $(dist_icons)favicon-16x16.png
-	@$(CC) $(SOURCE) -resize 32x32! $(dist_icons)favicon-32x32.png
-	@$(CC) $(SOURCE) -resize 48x48! $(dist_icons)favicon-48x48.png
-	@$(CC) $(SOURCE) -resize 57x57! $(dist_icons)favicon-57x57.png
-	@$(CC) $(SOURCE) -resize 76x76! $(dist_icons)favicon-76x76.png
-	@$(CC) $(SOURCE) -resize 96x96! $(dist_icons)favicon-96x96.png
-	@$(CC) $(SOURCE) -resize 128x128! $(dist_icons)favicon-128x128.png
-	@$(CC) $(SOURCE) -resize 192x192! $(dist_icons)favicon-192x192.png
-	@$(CC) $(SOURCE) -resize 192x192! $(dist_icons)favicon-196x196.png
-	@$(CC) $(SOURCE) -resize 228x228! $(dist_icons)favicon-228x228.png
+	@$(CC) $(SOURCE) -resize 16x16 $(dist_icons)favicon-16x16.png
+	@$(CC) $(SOURCE) -resize 32x32 $(dist_icons)favicon-32x32.png
+	@$(CC) $(SOURCE) -resize 48x48 $(dist_icons)favicon-48x48.png
+	@$(CC) $(SOURCE) -resize 57x57 $(dist_icons)favicon-57x57.png
+	@$(CC) $(SOURCE) -resize 76x76 $(dist_icons)favicon-76x76.png
+	@$(CC) $(SOURCE) -resize 96x96 $(dist_icons)favicon-96x96.png
+	@$(CC) $(SOURCE) -resize 128x128 $(dist_icons)favicon-128x128.png
+	@$(CC) $(SOURCE) -resize 192x192 $(dist_icons)favicon-192x192.png
+	@$(CC) $(SOURCE) -resize 192x192 $(dist_icons)favicon-196x196.png
+	@$(CC) $(SOURCE) -resize 228x228 $(dist_icons)favicon-228x228.png
 
 	@echo "Packing.. triple-sized favicon.ico"
 	@$(CC) $(dist_icons)favicon-16x16.png $(dist_icons)favicon-32x32.png $(dist_icons)favicon-48x48.png $(dist_public)favicon.ico
 
 	@echo "Generating.. Android icons"
-	@$(CC) $(SOURCE) -resize 196x196! $(dist_icons)favicon-196x196.png
-	@$(CC) $(SOURCE) -resize 192x192! $(dist_icons)android-chrome-192x192.png
-	@$(CC) $(SOURCE) -resize 196x196! $(dist_icons)android-chrome-512x512.png
+	@$(CC) $(SOURCE) -resize 196x196 $(dist_icons)favicon-196x196.png
+	@$(CC) $(SOURCE) -resize 192x192 $(dist_icons)android-chrome-192x192.png
+	@$(CC) $(SOURCE) -resize 196x196 $(dist_icons)android-chrome-512x512.png
 
 	@echo "Generating.. Apple icons"
-	@$(CC) $(SOURCE) -resize 57x57! $(dist_icons)apple-touch-icon-57x57.png
-	@$(CC) $(SOURCE) -resize 114x114! $(dist_icons)apple-touch-icon-114x114.png
-	@$(CC) $(SOURCE) -resize 72x72! $(dist_icons)apple-touch-icon-72x72.png
-	@$(CC) $(SOURCE) -resize 144x144! $(dist_icons)apple-touch-icon-144x144.png
-	@$(CC) $(SOURCE) -resize 60x60! $(dist_icons)apple-touch-icon-60x60.png
-	@$(CC) $(SOURCE) -resize 120x120! $(dist_icons)apple-touch-icon-120x120.png
-	@$(CC) $(SOURCE) -resize 76x76! $(dist_icons)apple-touch-icon-76x76.png
-	@$(CC) $(SOURCE) -resize 152x152! $(dist_icons)apple-touch-icon-152x152.png
-	@$(CC) $(SOURCE) -resize 180x180! $(dist_icons)apple-touch-icon.png
-	@$(CC) $(SOURCE) -resize 180x180! $(dist_public)apple-touch-icon.png
-	@$(CC) $(SOURCE) -resize 180x180! -quality 80% $(dist_public)apple-touch-icon-precomposed.png
+	@$(CC) $(SOURCE) -resize 57x57 $(dist_icons)apple-touch-icon-57x57.png
+	@$(CC) $(SOURCE) -resize 114x114 $(dist_icons)apple-touch-icon-114x114.png
+	@$(CC) $(SOURCE) -resize 72x72 $(dist_icons)apple-touch-icon-72x72.png
+	@$(CC) $(SOURCE) -resize 144x144 $(dist_icons)apple-touch-icon-144x144.png
+	@$(CC) $(SOURCE) -resize 60x60 $(dist_icons)apple-touch-icon-60x60.png
+	@$(CC) $(SOURCE) -resize 120x120 $(dist_icons)apple-touch-icon-120x120.png
+	@$(CC) $(SOURCE) -resize 76x76 $(dist_icons)apple-touch-icon-76x76.png
+	@$(CC) $(SOURCE) -resize 152x152 $(dist_icons)apple-touch-icon-152x152.png
+	@$(CC) $(SOURCE) -resize 180x180 $(dist_icons)apple-touch-icon.png
+	@$(CC) $(SOURCE) -resize 180x180 $(dist_public)apple-touch-icon.png
+	@$(CC) $(SOURCE) -resize 180x180 -quality 80% $(dist_public)apple-touch-icon-precomposed.png
 
 	@echo "Generating.. IE 10 Metro tile icons"
-	@$(CC) $(SOURCE) -resize 144x144! $(dist_icons)mstile-144x144.png
+	@$(CC) $(SOURCE) -resize 144x144 $(dist_icons)mstile-144x144.png
 
 	@echo "Generating.. IE 11 Metro tile for Windows 8.1 start screen"
-	@$(CC) $(SOURCE) -resize 70x70! $(dist_icons)mstile-small.png
-	@$(CC) $(SOURCE) -resize 150x150! $(dist_icons)mstile-medium.png
-	@$(CC) $(SOURCE) -resize 310x150! $(dist_icons)mstile-wide.png
-	@$(CC) $(SOURCE) -resize 310x310! $(dist_icons)mstile-large.png
+	@$(CC) $(SOURCE) -resize 70x70 $(dist_icons)mstile-small.png
+	@$(CC) $(SOURCE) -resize 150x150 $(dist_icons)mstile-medium.png
+	@$(CC) $(SOURCE) -resize 310x150 $(dist_icons)mstile-wide.png
+	@$(CC) $(SOURCE) -resize 310x310 $(dist_icons)mstile-large.png
 
 	@echo "Generating.. manifest.json"
 	$(file_manifest)
