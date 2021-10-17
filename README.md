@@ -2,12 +2,12 @@
 Generates all necessary favicons for your website.
 This includes iOS Safari, Google Chrome, Mozilla Firefox, Windows 8 and 10, and possibly some other browsers.
 
-# Getting Started
+## Getting Started
 To get started with favicon generator you need to make sure [ImageMagick](https://imagemagick.org/index.php) and the latest [GNU make](https://www.gnu.org/software/make/) software are installed and present in your PATH environment variable.
 
-# Configuration
+## Configuration
 By default, makefile uses `convert` file of ImageMagick software, but you can change that by specifying a new name as a parameter for make
-```
+```make
 make CC=<executable name>
 ```
 or by changing the following line in a makefile
@@ -17,14 +17,14 @@ CC = magick
 
 Also, the default image filename make is looking for is `source.png`, and you can change that either passing the new filename as a parameter
 ```
-make FILE=<image filename>
+make SOURCE=<image filename>
 ```
 or by changing the following line
 ```
-FILE ?= <image filename>
+SOURCE ?= <image filename>
 ```
 
-# Using bash
+## Using bash
 You use bash script `generate.sh` to use the program anywhere on your system. First of, you have to create a symbolic link to an executable using the following command
 ```bash
 $ ln -s <path to program>/generate.sh ~/.local/bin/webicongen
@@ -36,7 +36,7 @@ $ webicongen <image> <output dir>
 ```
 The output directory will be created automatically.
 
-# Usage
+## Usage
 After everything is configured, simply place your image in the same directory as makefile, and then simply run `make`. It will generate the following directory structure
 ```
 dist/
@@ -79,7 +79,9 @@ dist/
 
 `public` folder must be the same as your project's public folder, you can simply copy-paste it into your project (make sure you don't have one of these generated files already in your project, such as `manifest.json`).
 
-# Acknowledgements
+---
+
+## Acknowledgements
 I would love to hear any ideas or issues regarding this makefile. Make sure to create an issue or a pull request.
 
 You can also send me an email to stuzer05 at gmail.com
